@@ -6,6 +6,7 @@ const layoutName = (name) => (req, res, next) => {
 };
 
 router.use(layoutName('dashboard'))
-router.get('/', dashboard.post.index)
+router.get('/', dashboard.home)
+router.get('/post', dashboard.post.index)
 
 module.exports = router
