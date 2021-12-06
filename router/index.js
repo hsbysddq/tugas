@@ -10,4 +10,7 @@ router.use(controller.exception)
 const dashboard = require('./dashboard')
 router.use('/dashboard', dashboard)
 
+const auth = require('./auth')
+router.use('/auth', auth)
+
 module.exports = router
