@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
-const { PORT = 8080 } = process.env
+const { PORT = 8000 } = process.env
 const expressLayout = require('express-ejs-layouts')
+const path = require('path')
 
 // View Engine
 app.use(express.static('public'))
@@ -13,15 +14,12 @@ app.set('layout', 'layouts/default')
 app.use(express.urlencoded({extended: false }))
 app.use(express.json())
 
-// Middlewares, pasang sebelum routing
 const setDefault = (req, res, next) => {
     res.locals.contentName = "Default"
-    // Silahkan tambahkan default variabel lain, bila diperlukan
 next()}
 
 const router = require('./router')
 app.use(router)
-
 
 app.listen(PORT, () => {
     console.log(`Listening on http://localhost:${PORT}`)

@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const res = require('express/lib/response');
+// const res = require('express/lib/response')
 const { dashboard } = require('../controllers')
 const layoutName = (name) => (req, res, next) => {
     res.locals.layout = `layouts/${name}`;
